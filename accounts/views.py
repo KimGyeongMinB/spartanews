@@ -4,13 +4,17 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import get_user_model,authenticate
 from django.contrib.auth.models import User
-from .serializers import UserSerializer,PasswordCheckSerializer, SubSerializer, ChangePasswordSerializer
+from .serializers import UserSerializer,PasswordCheckSerializer, SubSerializer, ChangePasswordSerializer, UsernameFindSerializer,PwEmailSerializer
 from rest_framework import generics,mixins
 from rest_framework.generics import ListAPIView
 from django.shortcuts import render, get_object_or_404
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.decorators import api_view, permission_classes
 # from django.views.decorators.csrf import csrf_exempt
 # from django.utils.decorators import method_decorator
+
+# JWT_PAYLOAD_HANDLER = api_settings.JWT_PAYLOAD_HANDLER
+# JWT_ENCODE_HANDLER = api_settings.JWT_ENCODE_HANDLER
 
 User = get_user_model() # 필수 지우면 큰일남
 
@@ -78,6 +82,56 @@ class SubscribeView(APIView):  # 구독 기능
             user.subscribes.add(me)
             return Response("구독했습니다.", status=status.HTTP_200_OK)
         
+
+    
+# -------------------------------------------------------------
+# username 찾기
+@api_view(["PUT"])
+@permission_classes([AllowAny])
+class UsernameFindAPIView(APIView):
+    def findusername(request):
+        serializer = UsernameFindSerializer(data=request.data)
+        if serializer.is_valid():
+            if User.objects.filter(email=serializer.data['username']).exists():
+                return Response('존재하는 Username입니다')
+            else:
+                return Response('존재하지 않는 Username입니다')
+        return Response('Username을 다시 입력하세요')
+
+
+#비밀번호 재설정 이메일 보내기
+# class PwResetEmailSendView(APIView):
+#     permission_classes = [AllowAny]
+    
+#     def put(self,request):
+#         serializer = PwEmailSerializer(data=request.data)
+#         try:
+#             if serializer.is_valid():
+#                 user_email = serializer.data['email']
+#                 print(user_email)
+#                 user = User.objects.get(email = user_email)
+#                 print(user)
+#                 payload = JWT_PAYLOAD_HANDLER(user)
+#                 jwt_token = JWT_ENCODE_HANDLER(payload)
+#                 message = render_to_string('users/password_reset.html', {
+#                     'user': user,
+#                     'domain': 'localhost:8000',
+#                     'uid': force_str(urlsafe_base64_encode(force_bytes(user.pk))),
+#                     'token': jwt_token,
+#                 })
+#                 print(message)
+#                 mail_subject = '[SDP] 비밀번호 변경 메일입니다'
+#                 to_email = user.email
+#                 email = EmailMessage(mail_subject, message, to = [to_email])
+#                 email.send()    
+#                 return Response( user.email+ '이메일 전송이 완료되었습니다',status=status.HTTP_200_OK)
+#             print(serializer.errors)
+#             return Response('일치하는 유저가 없습니다',status=status.HTTP_400_BAD_REQUEST)
+#         except( ValueError, OverflowError, User.DoesNotExist):
+#             user = None
+#             print(traceback.format_exc())
+#             return Response('일치하는 유저가 없습니다',status=status.HTTP_400_BAD_REQUEST)
+
 # password 변경
 class ChangePasswordAPIView(APIView):
     permission_classes = [IsAuthenticated]

@@ -6,7 +6,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['username', 'password', 'email', 'first_name', 'last_name', 'birth_date', 'gender']
+        fields = ['username', 'password', 'email','birth_date' ]
 
     def validate(self, data):
         if User.objects.filter(email=data['email']).exists():
@@ -35,8 +35,30 @@ class SubSerializer(serializers.ModelSerializer):
         model = User
         fields = ['subscribings']
 
+# -------------------------------------------ㄱ
+# 비밀번호 찾는 이메일 보내기 시리얼라이저 
+class PwEmailSerializer(serializers.Serializer):
+    email = serializers.EmailField(max_length=64)
+
+    def validate_email(self, value):
+        '''데이터베이스에 존재하는지 확인'''
+        if not User.objects.filter(email=value).exists():
+            raise serializers.ValidationError("존재하지 않는 이메일입니다.")
+        else:
+            return value
+# -------------------------------------------ㄱ
+
 
 # 비밀번호 변경 시리얼라이저
 class ChangePasswordSerializer(serializers.Serializer):
     old_password = serializers.CharField(required=True)
     new_password = serializers.CharField(required=True)
+
+
+
+# -------------------------------------------ㄱ
+# username 찾기 시리얼라이저
+class UsernameFindSerializer(serializers.Serializer):
+    username = serializers.CharField(max_length=64,required=True)
+# -------------------------------------------ㄱ
+
