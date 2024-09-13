@@ -86,13 +86,14 @@ class SubscribeView(APIView):  # 구독 기능
     
 # -------------------------------------------------------------
 # username 찾기
-@api_view(["PUT"])
-@permission_classes([AllowAny])
+# @api_view(["PUT"])
 class UsernameFindAPIView(APIView):
-    def findusername(request):
+    
+    @permission_classes([AllowAny])
+    def put(self, request):
         serializer = UsernameFindSerializer(data=request.data)
         if serializer.is_valid():
-            if User.objects.filter(email=serializer.data['username']).exists():
+            if User.objects.filter(username=serializer.data['username']).exists():
                 return Response('존재하는 Username입니다')
             else:
                 return Response('존재하지 않는 Username입니다')

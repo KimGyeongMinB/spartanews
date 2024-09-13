@@ -1,7 +1,7 @@
 from . import views
 from django.urls import path
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
-from .views import SignupAPIView, LogoutAPIView, DeleteAPIView, ChangePasswordAPIView,UsernameFindAPIView,PassWordFindAPIView
+from .views import SignupAPIView, LogoutAPIView, DeleteAPIView, ChangePasswordAPIView,UsernameFindAPIView
 
 app_name = 'accounts'
 
@@ -16,6 +16,6 @@ urlpatterns = [
     path("<str:username>/mypage/", views.Mypage.as_view(), name="mypage"),
 
     path('find-user/', UsernameFindAPIView.as_view() ), # username 찾기
-    path('find-pw/', PassWordFindAPIView.as_view() ), # 비밀번호 찾기
+    # path('find-pw/', PassWordFindAPIView.as_view() ), # 비밀번호 찾기
 
 ]
