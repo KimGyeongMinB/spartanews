@@ -82,57 +82,6 @@ class SubscribeView(APIView):  # 구독 기능
             user.subscribes.add(me)
             return Response("구독했습니다.", status=status.HTTP_200_OK)
         
-
-    
-# -------------------------------------------------------------
-# username 찾기
-# @api_view(["PUT"])
-class UsernameFindAPIView(APIView):
-    
-    @permission_classes([AllowAny])
-    def put(self, request):
-        serializer = UsernameFindSerializer(data=request.data)
-        if serializer.is_valid():
-            if User.objects.filter(username=serializer.data['username']).exists():
-                return Response('존재하는 Username입니다')
-            else:
-                return Response('존재하지 않는 Username입니다')
-        return Response('Username을 다시 입력하세요')
-
-
-#비밀번호 재설정 이메일 보내기
-# class PwResetEmailSendView(APIView):
-#     permission_classes = [AllowAny]
-    
-#     def put(self,request):
-#         serializer = PwEmailSerializer(data=request.data)
-#         try:
-#             if serializer.is_valid():
-#                 user_email = serializer.data['email']
-#                 print(user_email)
-#                 user = User.objects.get(email = user_email)
-#                 print(user)
-#                 payload = JWT_PAYLOAD_HANDLER(user)
-#                 jwt_token = JWT_ENCODE_HANDLER(payload)
-#                 message = render_to_string('users/password_reset.html', {
-#                     'user': user,
-#                     'domain': 'localhost:8000',
-#                     'uid': force_str(urlsafe_base64_encode(force_bytes(user.pk))),
-#                     'token': jwt_token,
-#                 })
-#                 print(message)
-#                 mail_subject = '[SDP] 비밀번호 변경 메일입니다'
-#                 to_email = user.email
-#                 email = EmailMessage(mail_subject, message, to = [to_email])
-#                 email.send()    
-#                 return Response( user.email+ '이메일 전송이 완료되었습니다',status=status.HTTP_200_OK)
-#             print(serializer.errors)
-#             return Response('일치하는 유저가 없습니다',status=status.HTTP_400_BAD_REQUEST)
-#         except( ValueError, OverflowError, User.DoesNotExist):
-#             user = None
-#             print(traceback.format_exc())
-#             return Response('일치하는 유저가 없습니다',status=status.HTTP_400_BAD_REQUEST)
-
 # password 변경
 class ChangePasswordAPIView(APIView):
     permission_classes = [IsAuthenticated]
@@ -149,3 +98,19 @@ class ChangePasswordAPIView(APIView):
                 return Response({'message': '비밀번호를 성공적으로 변경하였습니다.'}, status=200)
             return Response({'error': '비밀번호가 같습니다 새 비밀번호를 입력해주세요'}, status=400)
         return Response(serializer.errors, status=400)
+    
+
+# -------------------------------------------------------------
+# username 찾기
+class UsernameFindAPIView(APIView):    
+    @permission_classes([AllowAny])
+    def put(self, request):
+        serializer = UsernameFindSerializer(data=request.data)
+        if serializer.is_valid():
+            if User.objects.filter(first_name=serializer.data['first_name'], last_name=serializer.data['last_name'], birth_date=serializer.data['birth']) :
+                result= User.objects.get(first_name=serializer.data['first_name'], last_name=serializer.data['last_name'], birth_date=serializer.data['birth'])
+                return Response("사용자님의 username은 '" + result.username + "' 입니다")
+            else:
+                return Response('해당 정보로 존재하는 계정이 없습니다')
+        return Response('정보가 모두 입력되지 않았습니다. 다시 입력하세요')
+

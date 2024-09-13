@@ -59,6 +59,8 @@ class ChangePasswordSerializer(serializers.Serializer):
 # -------------------------------------------ㄱ
 # username 찾기 시리얼라이저
 class UsernameFindSerializer(serializers.Serializer):
-    username = serializers.CharField(max_length=64,required=True)
+    first_name = serializers.CharField(max_length=64,required=True)
+    last_name = serializers.CharField(max_length=64,required=True)
+    birth= serializers.CharField(max_length=64,required=True)
 # -------------------------------------------ㄱ
 
