@@ -14,13 +14,25 @@ DRF를 통해 뉴스목록 보여주는 api를 만드는 프로젝트
 
 ## 4. 주요기능
 - **유저기능 관련:**
-  - 회원가입(이메일인증)
-  - 로그인&로그아웃
-  - 회원탈퇴
-  - 마이페이지
-  - 다른 사용자 구독
-  - 비밀번호 재설정
-    
+  <details>
+   <summary>회원가입</summary>
+  username, password, email 등을 입력해 회원가입을 요청하고, 입력한 email로 호스트의 인증메일을 받으면 가입이 처리된다.
+  </details>
+  <details>
+  <summary>로그인&로그아웃</summary>
+  </details>
+  <details>
+  <summary>회원탈퇴</summary>
+  </details>
+  <details>
+  <summary>마이페이지</summary>
+  </details>
+  <details>
+  <summary>다른 사용자 구독</summary>
+  </details>
+  <details>
+  <summary>비밀번호 재설정</summary>
+ </details>   
 
 &nbsp;
 
@@ -137,7 +149,7 @@ python manage.py runserver
 ------
 
 
-## 프로젝트 파일 구조
+## 10. 프로젝트 파일 구조
 
 ```
 📦 
@@ -186,7 +198,7 @@ python manage.py runserver
 &nbsp;
 &nbsp;
 
-## 역할분담 
+## 11. 역할분담 
 * Backend
   - User registration 강다영
   - Login 강다영
@@ -213,6 +225,7 @@ python manage.py runserver
 
 &nbsp;
 
+## 12. Trouble Shooting
+----------------------------
 
 
->>>>>>> aeb25bdcc570298f15345727fb401735fef7b52f
