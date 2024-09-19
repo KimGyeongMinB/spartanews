@@ -94,7 +94,7 @@ DRF를 통해 뉴스목록 보여주는 api를 만드는 프로젝트
   </details>
   <details>
   <summary>뉴스 검색</summary>
-   전체목록 view 안에서 조회함.
+   전체목록 view 안에서 조회함. 글제목/글내용/작성자로 검색 가능.
   </details>
   <details>
   <summary>뉴스 번역 (LLM)</summary>
