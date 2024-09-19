@@ -61,34 +61,48 @@ DRF를 통해 뉴스목록 보여주는 api를 만드는 프로젝트
    페이지네이션을 사용해 한 페이지마다 글이 5개씩 보이게 함.
   </details>
   <details>
+  <summary>뉴스 상세 보기</summary>
+   로그인하지 않아도 조회할 수 있음.
+  </details>
+  <details>
   <summary>뉴스 작성</summary>
+   로그인한 사용자만 작성할 수 있음.
   </details>
   <details>
   <summary>뉴스 수정</summary>
+   로그인한 사용자만 수정할 수 있음.
   </details>
   <details>
   <summary>뉴스 삭제</summary>
+   작성자 본인만 삭제할 수 있음.
   </details>
   <details>
   <summary>뉴스 좋아요하기</summary>
+   글 좋아요 / 좋아요취소.
   </details>
   <details>
   <summary>댓글 작성</summary>
+   댓글 작성시 댓글의 기본키가 생성됨.
   </details>
   <details>
   <summary>댓글 삭제</summary>
+   댓글의 기본키를 이용해 삭제함. 
   </details>
   <details>
   <summary>댓글 추천</summary>
+   댓글 추천 / 추천 취소.
   </details>
   <details>
   <summary>뉴스 검색</summary>
+   전체목록 view 안에서 조회함.
   </details>
   <details>
   <summary>뉴스 번역 (LLM)</summary>
+   오픈AI GPT-4o-mini를 이용한 영-한 번역
   </details>
   <details>
   <summary>뉴스 요약 (LLM)</summary>
+   오픈AI GPT-4o-mini를 이용한 요약. 텍스트가 입력되지 않으면 에러를 반환함.
   </details>
 
 &nbsp;
