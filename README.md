@@ -201,10 +201,14 @@ python manage.py runserver
 
 
 ## 8. API명세
-![api명세25](https://github.com/user-attachments/assets/0c36ab25-9aa9-49dc-9169-1e784178b3c6)
+![api명세 0919](https://github.com/user-attachments/assets/41b1cd32-0bd5-4698-9a90-18655da2d0b0)
+
+
+
 
 ## 9. 와이어프레임
-------
+![wf 0919](https://github.com/user-attachments/assets/4ee545de-88e0-476b-a23c-3acddcefd46f)
+
 
 
 ## 10. 프로젝트 파일 구조
