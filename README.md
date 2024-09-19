@@ -9,8 +9,10 @@ DRF를 통해 뉴스목록 보여주는 api를 만드는 프로젝트
 
  [🍭팀노션 이동](https://www.notion.so/teamsparta/1e2a365b56ad4cf8acd68bff9c3c59c8/)
 
+## 3. 개발기간
+9/12(목)~9/18(수)
 
-## 3. 주요기능
+## 4. 주요기능
 - **유저기능 관련:**
   - 회원가입(이메일인증)
   - 로그인&로그아웃
@@ -36,9 +38,8 @@ DRF를 통해 뉴스목록 보여주는 api를 만드는 프로젝트
 
 &nbsp;
 
-## 개발발환경
+## 5. 개발환경
 <details>
-  <summary>열기</summary>
 
 - aiohappyeyeballs==2.4.0
 - aiohttp==3.10.5
@@ -83,33 +84,12 @@ DRF를 통해 뉴스목록 보여주는 api를 만드는 프로젝트
 - openai==1.45.0
 - orjson==3.10.7
 - packaging==24.1
-- pillow==10.4.0
-- psycopg2==2.9.9
-- pydantic==2.9.1
-- pydantic_core==2.23.3
-- PyJWT==2.9.0
-- python-dateutil==2.9.0.post0
-- PyYAML==6.0.2
-- regex==2024.9.11
-- requests==2.32.3
-- six==1.16.0
-- sniffio==1.3.1
-- SQLAlchemy==2.0.35
-- sqlparse==0.5.1
-- tenacity==8.5.0
-- tiktoken==0.7.0
-- toposort==1.10
-- tqdm==4.66.5
-- typing_extensions==4.12.2
-- tzdata==2024.1
-- urllib3==2.2.2
-- Werkzeug==3.0.3
-- yarl==1.11.1
-</details>
+ </details>
 
-&nbsp;
+## 6. 시작하기
 
-## Getting started
+   <details>
+
 #### Installation
 
 ```python
@@ -139,8 +119,10 @@ python manage.py runserver
 &nbsp;
 &nbsp;
 &nbsp;
+</details>
 
-## ERD
+
+## 7. ERD
 ![ERD](/ERD.png)
 &nbsp;
 &nbsp;
@@ -148,12 +130,14 @@ python manage.py runserver
 &nbsp;
 
 
-## API명세
-![image](https://github.com/user-attachments/assets/2e4cf340-846e-4edf-b1e3-961c79052729)
+## 8. API명세
+![api명세25](https://github.com/user-attachments/assets/0c36ab25-9aa9-49dc-9169-1e784178b3c6)
+
+## 9. 와이어프레임
+------
 
 
-
-## Project Structure
+## 프로젝트 파일 구조
 
 ```
 📦 
@@ -171,6 +155,7 @@ python manage.py runserver
 │  ├─ serializers.py
 │  ├─ tests.py
 │  ├─ urls.py
+│  ├─ utils.py
 │  └─ views.py
 ├─ articles
 │  ├─ __init__.py
@@ -201,7 +186,7 @@ python manage.py runserver
 &nbsp;
 &nbsp;
 
-## Role & Contribution
+## 역할분담 
 * Backend
   - User registration 강다영
   - Login 강다영
@@ -224,38 +209,10 @@ python manage.py runserver
 &nbsp;
 * etc
   + 전체 개발 일정 및 이슈 관리 - 전 팀원
-  + 발표 - 김경민
+  + PPT제작 & 영상제작 & 발표 - 김경민
 
 &nbsp;
 
-## Developer
-- 강다영
-- 김경민
-- 김나희
-- 조민희
-=======
-뉴스api 사이트
 
 
-# ERD
-![ERD](/ERD.png)
-
-#
-
-# 개발환경
-asgiref==3.8.1
-Django==4.2
-django-seed==0.3.1
-djangorestframework==3.15.2
-djangorestframework-simplejwt==5.3.1
-Faker==28.4.1
-pillow==10.4.0
-psycopg2==2.9.9
-PyJWT==2.9.0
-python-dateutil==2.9.0.post0
-six==1.16.0
-sqlparse==0.5.1
-toposort==1.10
-typing_extensions==4.12.2
-tzdata==2024.1
 >>>>>>> aeb25bdcc570298f15345727fb401735fef7b52f
