@@ -2,7 +2,8 @@
 <<<<<<< HEAD
 This is the Totoro News project, inspired by the Geek News page.
 
-&nbsp;
+## 🍭 팀노션
+https://www.notion.so/teamsparta/1e2a365b56ad4cf8acd68bff9c3c59c8
 
 ## Features
 - **Account Management:**
