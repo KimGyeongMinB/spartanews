@@ -1,5 +1,18 @@
-# spartanews
+# 프로젝트명 : spartanews
+<br>
 
+## 📖 목차
+1. [프로젝트 소개](#프로젝트-소개)
+2. [팀소개](#팀-소개)
+3. [개발기간](#개발기간)
+4. [주요기능](#주요기능)
+5. [개발환경](#개발환경)
+6. [시작하기](#시작하기)
+7. [ERD](#ERD)
+8. [API명세](#API명세)
+9. [와이어프레임](#와이어프레임)
+10. [프로젝트 파일 구조](#프로젝트-파일-구조)
+11. [역할분담](#역할분담)
 
 ## 1. 프로젝트 소개
 DRF를 통해 뉴스목록 보여주는 api를 만드는 프로젝트
@@ -16,8 +29,8 @@ DRF를 통해 뉴스목록 보여주는 api를 만드는 프로젝트
 ## 4. 주요기능
 - **유저기능 관련:**
   <details>
-   <summary>회원가입</summary>
-  username, password, email 등을 입력해 회원가입을 요청하고, 입력한 email로 호스트의 인증메일을 받으면 가입이 처리된다.
+   <summary>이메일인증을 통한 회원가입</summary>
+  username, password, email 등을 입력해 회원가입을 요청하고, 입력한 email로 도착한 호스트의 인증메일을 클릭면 가입이 처리된다.
   </details>
   <details>
   <summary>로그인&로그아웃</summary>
@@ -39,16 +52,39 @@ DRF를 통해 뉴스목록 보여주는 api를 만드는 프로젝트
 &nbsp;
 
 - **게시기능 관련:**
-  - 전체글 목록 보기
-  - 글 작성
-  - 글 수정/삭제
-  - 글 좋아요하기
-  - 댓글 작성
-  - 댓글 삭제
-  - 댓글 좋아요하기
-  - 글 검색
-  - 글 번역 (LLM)
-  - 글 요약 (LLM)
+  <details>
+  <summary>뉴스목록 보기</summary>
+  </details>
+  <details>
+  <summary>뉴스 작성</summary>
+  </details>
+  <details>
+  <summary>뉴스 수정</summary>
+  </details>
+  <details>
+  <summary>뉴스 삭제</summary>
+  </details>
+  <details>
+  <summary>뉴스 좋아요하기</summary>
+  </details>
+  <details>
+  <summary>댓글 작성</summary>
+  </details>
+  <details>
+  <summary>댓글 삭제</summary>
+  </details>
+  <details>
+  <summary>댓글 추천</summary>
+  </details>
+  <details>
+  <summary>뉴스 검색</summary>
+  </details>
+  <details>
+  <summary>뉴스 번역 (LLM)</summary>
+  </details>
+  <details>
+  <summary>뉴스 요약 (LLM)</summary>
+  </details>
 
 &nbsp;
 
@@ -202,23 +238,25 @@ python manage.py runserver
 
 ## 11. 역할분담 
 * Backend
-  - User registration 강다영
-  - Login 강다영
-  - Logout 강다영
-  - Withdrawal 강다영
-  - Search articles 강다영
-  - Change the Password 김경민
-  - Subscription to the authors 김경민
-  - User profile(My page) 김경민
-  - 'Like' to articles 김나희
-  - Post comments 김나희
-  - Delete comments 김나희
-  - Recommend comments 김나희
-  - Post articles 조민희
-  - Edit articles 조민희
-  - Delete articles 조민희
-  - Show article list 조민희
-  - Show article 조민희
+  - <b>회원가입</b> 강다영
+  - <b>로그인</b> "
+  - <b>로그아웃</b> "
+  - <b>회원탈퇴</b> "
+  - <b>기사 검색</b> "
+  - <b>비밀번호 변경</b> 김경민
+  - <b>작성자 구독</b> "
+  - <b>마이페이지</b> "
+  - <b>뉴스 작성</b> 조민희
+  - <b>뉴스 수정</b> "
+  - <b>뉴스 삭제</b> "
+  - <b>뉴스 목록 보기</b> "
+  - <b>뉴스 상세 보기</b> "
+  - <b>뉴스 좋아요</b> 김나희
+  - <b>댓글 작성</b> "
+  - <b>댓글 삭제</b> "
+  - <b>댓글 추천</b> "
+  - <b>뉴스 번역</b> " 김경민
+  - <b>뉴스 요약</b> " 김경민
 
 &nbsp;
 * etc
@@ -227,8 +265,5 @@ python manage.py runserver
   + 시연영상 제작 & 발표 - 김경민
 
 &nbsp;
-
-## 12. Trouble Shooting
-----------------------------
 
 
