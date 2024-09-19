@@ -192,7 +192,8 @@ python manage.py runserver
 
 
 ## 7. ERD
-![ERD](/ERD.png)
+![erd 0919](https://github.com/user-attachments/assets/c788555d-1478-4359-bcc4-e4db6fb46c91)
+
 &nbsp;
 &nbsp;
 &nbsp;
