@@ -30,23 +30,26 @@ DRF를 통해 뉴스목록 보여주는 api를 만드는 프로젝트
 - **유저기능 관련:**
   <details>
    <summary>이메일인증을 통한 회원가입</summary>
-  username, password, email 등을 입력해 회원가입을 요청하고, 입력한 email로 도착한 호스트의 인증메일을 클릭면 가입이 처리된다.
+  username, password, email 등을 입력해 회원가입을 요청하고, 입력한 email로 도착한 호스트의 인증메일을 클릭면 가입이 처리됨. 인증메일을 클릭하기 전까지는 해당 계정으로 로그인이 되지 않음.
   </details>
   <details>
   <summary>로그인&로그아웃</summary>
   </details>
   <details>
   <summary>회원탈퇴</summary>
+   비밀번호를 입력받고 탈퇴가 처리됨
   </details>
   <details>
   <summary>마이페이지</summary>
-   
+  회원정보, 내가 작성한 글, 내가 구독하는 사람이 직렬화되어 반환됨
   </details>
   <details>
   <summary>다른 사용자 구독</summary>
+   스스로 구독하기 불가
   </details>
   <details>
   <summary>비밀번호 재설정</summary>
+  해당 이메일로 가입된 계정이 있을시, 비밀번호 재설정에 사용할 수 있는 토큰을 이메일로 전송받음.
  </details>   
 
 &nbsp;
