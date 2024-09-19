@@ -223,7 +223,8 @@ python manage.py runserver
 &nbsp;
 * etc
   + 전체 개발 일정 및 이슈 관리 - 전 팀원
-  + PPT제작 & 영상제작 & 발표 - 김경민
+  + PPT 제작 - 강다영, 김경민
+  + 시연영상 제작 & 발표 - 김경민
 
 &nbsp;
 
