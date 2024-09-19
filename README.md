@@ -34,6 +34,7 @@ DRF를 통해 뉴스목록 보여주는 api를 만드는 프로젝트
   </details>
   <details>
   <summary>로그인&로그아웃</summary>
+   -
   </details>
   <details>
   <summary>회원탈퇴</summary>
@@ -45,7 +46,7 @@ DRF를 통해 뉴스목록 보여주는 api를 만드는 프로젝트
   </details>
   <details>
   <summary>다른 사용자 구독</summary>
-   스스로 구독하기 불가
+   스스로 구독은 불가함
   </details>
   <details>
   <summary>비밀번호 재설정</summary>
@@ -57,6 +58,7 @@ DRF를 통해 뉴스목록 보여주는 api를 만드는 프로젝트
 - **게시기능 관련:**
   <details>
   <summary>뉴스목록 보기</summary>
+   페이지네이션을 사용해 한 페이지마다 글이 5개씩 보이게 함.
   </details>
   <details>
   <summary>뉴스 작성</summary>
